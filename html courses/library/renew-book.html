@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renew a Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .form-container {
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #2980b9;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #2ecc71;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Renew a Book</h1>
+
+    <div class="form-container">
+        <label for="bookName">Enter the Book Name:</label>
+        <input type="text" id="bookName" placeholder="Book Name" required>
+
+        <label for="bookSerialNo">Enter the Book Serial No:</label>
+        <input type="text" id="bookSerialNo" placeholder="Book Serial No" required>
+
+        <label for="renewDate">Enter the Renewal Date (yyyy-mm-dd):</label>
+        <input type="date" id="renewDate" required>
+
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <!-- Success message -->
+    <div id="successMessage" class="success-message">
+        <h3>Success! The book has been renewed successfully.</h3>
+    </div>
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            var bookName = document.getElementById("bookName").value;
+            var bookSerialNo = document.getElementById("bookSerialNo").value;
+            var renewDate = document.getElementById("renewDate").value;
+
+            if (bookName && bookSerialNo && renewDate) {
+                // Hide the form and show the success message
+                document.querySelector(".form-container").style.display = "none";
+                document.getElementById("successMessage").style.display = "block";
+
+                // Redirect back to index.html after 3 seconds
+                setTimeout(function() {
+                    window.location.href = "index.html";  // Replace with the actual path to your index.html file
+                }, 3000); // 3 seconds delay
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    </script>
+
+</body>
+</html>

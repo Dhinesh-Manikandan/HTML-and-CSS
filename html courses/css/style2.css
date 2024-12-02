@@ -1,0 +1,32 @@
+h1{
+                color:brown;
+            }
+            p{
+                color:blue;
+            }
+            body{
+                background-color: tan;
+                margin-left:10rem;
+                margin-right: 10rem;
+                border: 2px black dotted ;
+                padding: 10px 10px 10px 10px;
+                font-family: sans-serif;
+        }
+
+ul{
+    display: inline-block;
+    background-color:black;
+    text-align:right;
+    width:19em;
+    padding:2em;
+    list-style-type: none;
+    color:brown;
+    
+}
+li{
+    display:inline-block;
+    margin-inline:0.5rem;
+}
+.list{
+    text-decoration: underline blue;
+}

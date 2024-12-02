@@ -1,0 +1,12 @@
+h1{
+    background-color: brown;
+    width:30vw;
+    padding:10vw;
+}
+.left{
+    float:left;
+    margin-right:20px;
+}
+.clear{
+    clear:left;
+}

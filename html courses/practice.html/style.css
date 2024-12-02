@@ -1,0 +1,57 @@
+/* *{
+    margin=0%;
+    padding=0%;
+    box-sizing: border-box;
+} */
+body{
+    display: grid; 
+     grid-template-columns:auto;     
+    grid-auto-rows:auto; 
+    text-align: center;
+    min-width:300px;
+    border:1px;
+    border-color:black;
+    
+    
+}
+header,footer{
+    font: weight 200px;
+    font-size: 2rem;
+    background-color: rgb(2, 2, 54);
+    color:White;
+    margin:0%;
+}
+h1{
+    padding: none;
+    text-align: center;
+}
+main{
+    flex-grow: 1;
+    background-color:darkgray;
+
+}
+nav {
+
+    flex-grow: 1;
+    font-size:2rem;
+    justify-content:right;
+    background-color: white;
+    
+}
+nav a{
+    color:black;
+    justify-content:center;
+}
+img{
+    border:5px double black;
+    border-radius:50%;
+}
+figure{
+    border:3px solid black;
+    border-radius: 2%;
+    background-color:rgb(117, 146, 163);
+    
+}
+figcaption{
+    display:none;
+}

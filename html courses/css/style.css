@@ -1,0 +1,38 @@
+ *{
+    margin :0%;
+    padding:0%;
+    box-sizing:border-box;
+}
+.title{
+      font-size:3rem;
+      font-style:oblique;
+      margin:0;
+      border: 2px dotted black;
+      width:10em;
+      padding:0.4em;
+      text-align: center;
+      background-color:antiquewhite;
+      color:brown;
+}
+#para{
+    font-size:2rem;
+    font-family: 'Courier New', Courier, monospace;
+    color:blue;
+    padding:20px;
+    margin: 10px;
+    text-indent:30px;
+}
+a{
+    text-decoration:none;
+    color:red;
+    cursor:pointer;
+}
+a:visited{
+    color:black;
+}
+a:hover,a:focus{
+      opacity: 0.5;
+}
+a:active{
+    color:brown;
+}

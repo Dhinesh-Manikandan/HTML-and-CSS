@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Header styling */
+        h1 {
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Input form styling */
+        .input-form {
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .input-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .input-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Submit button styling */
+        .input-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-form button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Tabs container */
+        .tabs {
+            display: block;
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        /* Each individual tab (button) */
+        .tab {
+            display: block; /* Ensure each tab is on a new line */
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none; /* Ensure no underline */
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+            width: auto; /* Let the buttons take only necessary width */
+            margin-left: auto; /* Center the button */
+            margin-right: auto; /* Center the button */
+        }
+
+        .tab:hover {
+            background-color: #2980b9;
+        }
+
+        .tab a {
+            color: white; /* Ensures the link color remains white */
+            text-decoration: none; /* Remove the underline from links */
+        }
+
+        /* Thank you message */
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .input-form {
+                width: 95%;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab {
+                width: auto;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Anna University Library</h1>
+
+    <!-- Input Form -->
+    <div class="input-form" id="form-container">
+        <label for="name">Enter your Name:</label>
+        <input type="text" id="name" placeholder="Your Name">
+
+        <label for="registerNumber">Enter your Register Number:</label>
+        <input type="text" id="registerNumber" placeholder="Your Register Number">
+
+        <label for="email">Enter your College Email Id:</label>
+        <input type="text" id="email" placeholder="Your College Email Id">
+
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <!-- Tabs (Navigation) -->
+    <div class="tabs" id="tabs-container" style="display:none;">
+        <div class="tab"><a href="lend-book.html">Lend a Book</a></div>
+        <div class="tab"><a href="renew-book.html">Renew a Book</a></div>
+        <div class="tab"><a href="return-book.html">Return a Book</a></div>
+        <div class="tab"><a href="pay-fine.html">Fine Amount</a></div>
+    </div>
+
+    <!-- Thank You Message -->
+    <div class="thank-you" id="thankYouMessage">
+        <h2>Thank you for submitting your details!</h2>
+    </div>
+
+    <script>
+        // Handling form submission
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            var name = document.getElementById("name").value;
+            var registerNumber = document.getElementById("registerNumber").value;
+            var email = document.getElementById("email").value;
+
+            // Basic form validation
+            if (name && registerNumber && email) {
+                // Hide the form
+                document.getElementById("form-container").style.display = "none";
+
+                // Display the tabs
+                document.getElementById("tabs-container").style.display = "block";
+
+                // Show thank you message
+                document.getElementById("thankYouMessage").style.display = "block";
+            } else {
+                alert("Please fill in all fields before submitting.");
+            }
+        });
+    </script>
+
+</body>
+</html>

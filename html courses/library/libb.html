@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Header styling */
+        h1 {
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Input form styling */
+        .input-form {
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .input-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .input-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Buttons */
+        .input-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-form button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Tabs container styling */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 0;
+        }
+
+        /* Individual tab styling */
+        .tab {
+            padding: 15px 30px;
+            margin: 0 10px;
+            background-color: #ecf0f1;
+            cursor: pointer;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Active tab styling */
+        .tab.active-tab {
+            background-color: #3498db;
+            color: white;
+            border-color: #2980b9;
+        }
+
+        /* Tab content container */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Display active tab content */
+        .active-content {
+            display: block;
+        }
+
+        /* Styling for each case content */
+        .case-content h2 {
+            color: #2c3e50;
+        }
+
+        .case-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #7f8c8d;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .tab {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .tab-content {
+                width: 95%;
+            }
+        }
+    </style>
+    <script>
+        // Function to handle tab switching
+        function openTab(tabId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active-content'));
+            
+            // Show the selected tab content
+            const activeContent = document.getElementById(tabId);
+            activeContent.classList.add('active-content');
+            
+            // Update active tab styling
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active-tab'));
+            document.querySelector(`#${tabId}-tab`).classList.add('active-tab');
+        }
+        
+        // Function to show the tabs after form submission
+        function showTabs() {
+            document.querySelector('.input-form').style.display = 'none';
+            document.querySelector('.tabs').style.display = 'flex';
+            document.querySelector('#case1').classList.add('active-content'); // Set default active tab
+            document.querySelector('#case1-tab').classList.add('active-tab');
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Anna University Library System</h1>
+    
+    <!-- User Input Form before switch -->
+    <div class="input-form">
+        <h2>Enter Your Details</h2>
+        <form onsubmit="event.preventDefault(); showTabs();">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name" />
+
+            <label for="regno">Register Number</label>
+            <input type="text" id="regno" name="regno" required placeholder="Enter your register number" />
+
+            <label for="email">College Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your college email" />
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Tabs for each case -->
+    <div class="tabs" style="display: none;">
+        <div class="tab active-tab" id="case1-tab" onclick="openTab('case1')">Lend a Book</div>
+        <div class="tab" id="case2-tab" onclick="openTab('case2')">Renew a Book</div>
+        <div class="tab" id="case3-tab" onclick="openTab('case3')">Return a Book</div>
+        <div class="tab" id="case4-tab" onclick="openTab('case4')">Fine Amount</div>
+        <div class="tab" id="case5-tab" onclick="openTab('case5')">Exit</div>
+    </div>
+
+    <!-- Tab Content Sections -->
+    <div class="tab-content active-content" id="case1">
+        <div class="case-content">
+            <h2>Case 1: Lend a Book</h2>
+            <p>To lend a book, please enter the name, serial number, and lending date. If you already have the book, you will be notified. The next renewal/return date will be automatically set.</p>
+        </div>
+    </div>
+
+    <div class="tab-content" id="case2">
+        <div class="case-content">
+            <h2>Case 2: Renew a Book</h2>
+            <p>If you've already renewed the book once, you must return it. Otherwise, you can renew the book, and if any fine exists, it will be calculated based on the overdue duration.</p>
+        </div>
+    </div>
+
+    <div class="tab-content" id="case3">
+        <div class="case-content">
+            <h2>Case 3: Return a Book</h2>
+            <p>Return the book if you do not have any fines. If you have a fine, it must be cleared first before returning the book.</p>
+        </div>
+    </div>
+
+    <div class="tab-content" id="case4">
+        <div class="case-content">
+            <h2>Case 4: Fine Amount</h2>
+            <p>You can either pay your fine or check the total fine amount. If you opt to pay, your fine will be reset to zero.</p>
+        </div>
+    </div>
+
+    <div class="tab-content" id="case5">
+        <div class="case-content">
+            <h2>Case 5: Exit</h2>
+            <p>When you are done with your library actions, you can choose to exit. Optionally, you can export your data to a file.</p>
+        </div>
+    </div>
+
+</body>
+</html>

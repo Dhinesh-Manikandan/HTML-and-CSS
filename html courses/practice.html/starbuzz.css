@@ -1,0 +1,53 @@
+html{
+    background-color: #9c7252;
+    font-weight:2px;
+    font-family:serif;
+    box-sizing: border-box;
+    margin:auto;
+}
+#header,#footer{
+    background-color: rgb(146, 55, 55);
+    color:aliceblue;
+    font-size: 1.5em;
+    padding:10px;
+    margin:0px 10px 0px 10px;
+}
+#main{
+    display:table-cell;
+    background-color: rgb(215, 196, 161);
+    padding:20px;
+    font-size: 105%;
+    font-family:serif;
+    vertical-align: top;
+}
+#sidebar{
+    display:table-cell;
+    background-color: rgb(215, 196, 161);
+    padding:20px;
+    font-size:105%;
+    font-family:serif;
+    vertical-align: top;
+}
+.beanheading{
+    text-align: center;
+}
+h1,a{
+    color:rgb(197, 108, 108);
+}
+.order{
+    text-align: center;
+    line-height: 1.5em;
+}
+.slogan{
+    color:rgb(197, 108, 108);
+}
+#footer{
+    text-align: center;
+}
+.Tablecontent{
+    display:table;
+    border-spacing: 10px;
+}
+.Tablerow{
+    display: table-row;
+}

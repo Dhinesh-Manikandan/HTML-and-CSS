@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check or Pay Fine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            margin: 30px;
+        }
+
+        .input-field {
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .submit-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Check or Pay Fine</h1>
+
+    <div class="container">
+        <!-- Fine Form -->
+        <form id="fine-form" action="index.html" method="GET">
+            <div>
+                <input type="text" class="input-field" id="book-name" name="book-name" placeholder="Enter Book Name" required>
+            </div>
+            <div>
+                <input type="text" class="input-field" id="serial-no" name="serial-no" placeholder="Enter Serial No" required>
+            </div>
+            <div>
+                <input type="text" class="input-field" id="register-no" name="register-no" placeholder="Enter Register No" required>
+            </div>
+            <div>
+                <input type="email" class="input-field" id="email-id" name="email-id" placeholder="Enter College Email ID" required>
+            </div>
+            <div>
+                <button type="submit" class="submit-button">Submit Fine Details</button>
+            </div>
+        </form>
+
+        <!-- After Form is Submitted, show Success Message -->
+        <div id="success-message" style="display: none;">
+            <h2>Fine Paid Successfully!</h2>
+            <p>Your fine has been paid successfully. You can now return to the main page.</p>
+            <a href="index.html"><button class="back-button">Go to Home</button></a>
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission and show success message
+        document.getElementById('fine-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from actually submitting
+            
+            // Hide the form
+            document.getElementById('fine-form').style.display = 'none';
+
+            // Show success message
+            document.getElementById('success-message').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
